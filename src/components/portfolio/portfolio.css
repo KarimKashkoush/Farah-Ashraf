@@ -1,0 +1,121 @@
+.portfolio-container {
+    grid-template-columns: repeat(3, 270px);
+    justify-content: center;
+    column-gap: 1.8rem;
+}
+.portfolio-content {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--container-color);
+    padding:2rem;
+    direction: rtl;
+}
+
+.portfolio-text {
+    font-size: 1.5rem;
+}
+
+.portfolio-button {
+    margin-top: 1rem;
+    color: var(--title-color);
+    font-size: var(--small-font-size);
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    cursor: pointer;
+}
+
+.portfolio-button-icon {
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.portfolio-button:hover .portfolio-button-icon {
+    transform: translateX(-00.25rem);
+}
+
+.portfolio-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-modal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.portfolio-modal-description {
+    font-size: 1.25rem;
+    padding: 0 0.3rem;
+    margin-bottom: var(--mb-2);
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
+.portfolio-modal-content {
+    width: 500px;
+    position: relative;
+    background-color: var(--container-color);
+    padding: 4.5rem 2.5rem 2.5rem;
+    border-radius: 1.5rem;
+}
+
+.portfolio-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.portfolio-modal-title,
+.portfolio-modal-description {
+    text-align: center;
+}
+
+.portfolio-modal-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ltr {
+    direction: ltr;
+}
+@media screen and (max-width: 992px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 218px);
+    }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .portfolio-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
